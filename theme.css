@@ -1,34 +1,64 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+/* ======================================================
+   MERMAID THEME — FULLY FIXED FOR OBSIDIAN 1.5+
+   ====================================================== */
+
+.mermaid {
+	font-family: "Fira Sans", "Segoe UI", "Helvetica Neue", sans-serif !important;
+}
+/* --------------------------
+         LIGHT MODE
+   -------------------------- */
+.theme-light .mermaid {
+	--mermaid-node-bg: #ffffff;
+	--mermaid-node-border: #4e88e9;
+	--mermaid-node-text: #1a1a1a;
+	--mermaid-edge-color: #5a5a5a;
+	--mermaid-cluster-bg: #f0f0f0;
+}
+.theme-light .mermaid .node rect,
+.theme-light .mermaid .node circle,
+.theme-light .mermaid .node ellipse,
+.theme-light .mermaid .node polygon {
+	fill: var(--mermaid-node-bg) !important;
+	stroke: var(--mermaid-node-border) !important;
+	stroke-width: 2px !important;
+}
+.theme-light .mermaid .node text {
+	fill: var(--mermaid-node-text) !important;
+}
+.theme-light .mermaid .edgePath path {
+	stroke: var(--mermaid-edge-color) !important;
+}
+.theme-light .mermaid .cluster rect {
+	fill: var(--mermaid-cluster-bg) !important;
+	stroke: var(--mermaid-node-border) !important;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+/* --------------------------
+        DARK MODE
+   -------------------------- */
+.theme-dark .mermaid {
+	--mermaid-node-bg: #1e1e2f;
+	--mermaid-node-border: #4e88e9;
+	--mermaid-node-text: #ffffff;
+	--mermaid-edge-color: #aaaaaa;
+	--mermaid-cluster-bg: #2a2a3c;
 }
-
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+.theme-dark .mermaid .node rect,
+.theme-dark .mermaid .node circle,
+.theme-dark .mermaid .node ellipse,
+.theme-dark .mermaid .node polygon {
+	fill: var(--mermaid-node-bg) !important;
+	stroke: var(--mermaid-node-border) !important;
+	stroke-width: 2px !important;
 }
-
-.menu {
-	padding: var(--size-2-1);
+.theme-dark .mermaid .node text {
+	fill: var(--mermaid-node-text) !important;
 }
-
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
+.theme-dark .mermaid .edgePath path {
+	stroke: var(--mermaid-edge-color) !important;
 }
-
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+.theme-dark .mermaid .cluster rect {
+	fill: var(--mermaid-cluster-bg) !important;
+	stroke: var(--mermaid-node-border) !important;
 }
