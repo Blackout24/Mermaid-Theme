@@ -1,64 +1,1353 @@
 /* ======================================================
-   MERMAID THEME — FULLY FIXED FOR OBSIDIAN 1.5+
+    Mermaid OBSIDIAN THEME — PEARLESCENT OCEAN DREAMS
    ====================================================== */
 
-.mermaid {
-	font-family: "Fira Sans", "Segoe UI", "Helvetica Neue", sans-serif !important;
+:root {
+	/* ========== Mermaid COLOR PALETTE ========== */
+	/* Deep Ocean Blues */
+	--deep-ocean: #0a2342;
+	--midnight-sea: #1d3557;
+	--marine-blue: #457b9d;
+	--aqua-tide: #3d9bce;
+	/* Turquoise & Teals */
+	--turquoise-dream: #1abc9c;
+	--teal-enchantment: #008080;
+	--sea-glass: #6ac4ae;
+	--mermaid-teal: #1aa7a7;
+	/* Seafoam Greens */
+	--seafoam-mist: #9ce3d4;
+	--ocean-spray: #b8e0d2;
+	--pearl-green: #c1e1c1;
+	--lagoon-light: #a3d9d9;
+	/* Lavender & Purple Waves */
+	--lavender-tide: #b19cd9;
+	--amethyst-deep: #9b5de5;
+	--iris-purple: #6457a6;
+	--twilight-lavender: #d6c6e8;
+	/* Pearlescent & Iridescent */
+	--pearl-white: #f8f8ff;
+	--iridescent-blue: #88d3ce;
+	--shimmer-purple: #c8a2c8;
+	--opal-glow: #b5d6d6;
+	/* Sandy Beiges & Gold */
+	--sand-dune: #e6d5b8;
+	--seashell: #f5e9d9;
+	--coral-gold: #ffd166;
+	--sunset-gold: #ffb347;
+	/* Soft Pinks & Corals */
+	--seashell-pink: #ffc8dd;
+	--coral-blush: #ffafcc;
+	--pearl-pink: #ffb7c5;
+	--deep-coral: #ff6b6b;
+	/* ========== TYPOGRAPHY ========== */
+	--font-family-base: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	--font-family-fantasy: "Cormorant Garamond", "Playfair Display", serif;
+	--font-family-mono: "Fira Code", "Cascadia Code", "JetBrains Mono", monospace;
+	--font-size-xs: 0.75rem;
+	--font-size-sm: 0.875rem;
+	--font-size-base: 1rem;
+	--font-size-lg: 1.125rem;
+	--font-size-xl: 1.25rem;
+	--font-size-2xl: 1.5rem;
+	--font-size-3xl: 1.875rem;
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--line-height-tight: 1.25;
+	--line-height-normal: 1.5;
+	--line-height-relaxed: 1.75;
+	/* ========== SPACING & LAYOUT ========== */
+	--radius-sm: 0.375rem;
+	--radius-base: 0.5rem;
+	--radius-md: 0.75rem;
+	--radius-lg: 1rem;
+	--radius-xl: 1.5rem;
+	--space-xs: 0.25rem;
+	--space-sm: 0.5rem;
+	--space-md: 1rem;
+	--space-lg: 1.5rem;
+	--space-xl: 2rem;
+	/* ========== SHIMMERING SHADOWS ========== */
+	--shadow-sm: 0 1px 2px 0 rgba(26, 199, 194, 0.1);
+	--shadow-base: 0 1px 3px 0 rgba(155, 93, 229, 0.1), 0 1px 2px -1px rgba(26, 199, 194, 0.1);
+	--shadow-md: 0 4px 6px -1px rgba(26, 167, 167, 0.1), 0 2px 4px -2px rgba(155, 93, 229, 0.1);
+	--shadow-lg: 0 10px 15px -3px rgba(26, 167, 167, 0.15), 0 4px 6px -4px rgba(155, 93, 229, 0.15);
+	--shadow-glow: 0 0 20px rgba(136, 211, 206, 0.3);
+	/* ========== ANIMATION ========== */
+	--transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-wave: 2s ease-in-out infinite alternate;
 }
+
+/* ========== NEW AQUATIC THEME VARIANTS ========== */
+
 /* --------------------------
-         LIGHT MODE
+        DAYLIGHT REEF (New Light Theme)
    -------------------------- */
-.theme-light .mermaid {
-	--mermaid-node-bg: #ffffff;
-	--mermaid-node-border: #4e88e9;
-	--mermaid-node-text: #1a1a1a;
-	--mermaid-edge-color: #5a5a5a;
-	--mermaid-cluster-bg: #f0f0f0;
-}
-.theme-light .mermaid .node rect,
-.theme-light .mermaid .node circle,
-.theme-light .mermaid .node ellipse,
-.theme-light .mermaid .node polygon {
-	fill: var(--mermaid-node-bg) !important;
-	stroke: var(--mermaid-node-border) !important;
-	stroke-width: 2px !important;
-}
-.theme-light .mermaid .node text {
-	fill: var(--mermaid-node-text) !important;
-}
-.theme-light .mermaid .edgePath path {
-	stroke: var(--mermaid-edge-color) !important;
-}
-.theme-light .mermaid .cluster rect {
-	fill: var(--mermaid-cluster-bg) !important;
-	stroke: var(--mermaid-node-border) !important;
+.theme-light {
+	/* Background Gradients */
+	--bg-primary: linear-gradient(135deg, var(--pearl-white) 0%, var(--ocean-spray) 100%) !important;
+	--bg-secondary: linear-gradient(135deg, var(--seafoam-mist) 0%, var(--twilight-lavender) 100%) !important;
+	--bg-tertiary: linear-gradient(135deg, var(--pearl-green) 0%, var(--seashell) 100%) !important;
+	/* Text Colors */
+	--text-primary: var(--deep-ocean) !important;
+	--text-secondary: var(--midnight-sea) !important;
+	--text-tertiary: var(--marine-blue) !important;
+	/* Border & Accents */
+	--border-color: var(--aqua-tide) !important;
+	--accent-primary: var(--turquoise-dream) !important;
+	--accent-secondary: var(--amethyst-deep) !important;
+	--accent-tertiary: var(--sea-glass) !important;
+	--accent-quaternary: var(--lavender-tide) !important;
+	--accent-quinary: var(--coral-gold) !important;
+	--accent-senary: var(--seashell-pink) !important;
+	/* Special Effects */
+	--glow-primary: var(--iridescent-blue) !important;
+	--glow-secondary: var(--shimmer-purple) !important;
 }
 
 /* --------------------------
-        DARK MODE
+        TWILIGHT DEPTHS (New Dark Theme)
    -------------------------- */
-.theme-dark .mermaid {
-	--mermaid-node-bg: #1e1e2f;
-	--mermaid-node-border: #4e88e9;
-	--mermaid-node-text: #ffffff;
-	--mermaid-edge-color: #aaaaaa;
-	--mermaid-cluster-bg: #2a2a3c;
+.theme-dark {
+	/* Background Gradients */
+	--bg-primary: linear-gradient(135deg, var(--midnight-sea) 0%, var(--deep-ocean) 100%) !important;
+	--bg-secondary: linear-gradient(135deg, var(--iris-purple) 0%, var(--marine-blue) 30%, var(--midnight-sea) 100%) !important;
+	--bg-tertiary: linear-gradient(135deg, var(--teal-enchantment) 0%, var(--iris-purple) 100%) !important;
+	/* Text Colors */
+	--text-primary: var(--pearl-white) !important;
+	--text-secondary: var(--seafoam-mist) !important;
+	--text-tertiary: var(--opal-glow) !important;
+	/* Border & Accents */
+	--border-color: var(--aqua-tide) !important;
+	--accent-primary: var(--iridescent-blue) !important;
+	--accent-secondary: var(--amethyst-deep) !important;
+	--accent-tertiary: var(--mermaid-teal) !important;
+	--accent-quaternary: var(--lavender-tide) !important;
+	--accent-quinary: var(--sunset-gold) !important;
+	--accent-senary: var(--coral-blush) !important;
+	/* Special Effects */
+	--glow-primary: var(--opal-glow) !important;
+	--glow-secondary: var(--shimmer-purple) !important;
 }
-.theme-dark .mermaid .node rect,
-.theme-dark .mermaid .node circle,
-.theme-dark .mermaid .node ellipse,
-.theme-dark .mermaid .node polygon {
-	fill: var(--mermaid-node-bg) !important;
-	stroke: var(--mermaid-node-border) !important;
-	stroke-width: 2px !important;
+
+/* --------------------------
+        PEARLESCENT DREAM
+   -------------------------- */
+.theme-pearl {
+	--bg-primary: linear-gradient(135deg, var(--pearl-white) 0%, var(--twilight-lavender) 30%, var(--seafoam-mist) 100%) !important;
+	--bg-secondary: linear-gradient(135deg, var(--opal-glow) 0%, var(--pearl-pink) 50%, var(--seashell) 100%) !important;
+	--bg-tertiary: linear-gradient(135deg, var(--iridescent-blue) 0%, var(--shimmer-purple) 100%) !important;
+	--text-primary: var(--iris-purple) !important;
+	--text-secondary: var(--marine-blue) !important;
+	--text-tertiary: var(--amethyst-deep) !important;
+	--border-color: var(--opal-glow) !important;
+	--accent-primary: var(--iridescent-blue) !important;
+	--accent-secondary: var(--shimmer-purple) !important;
+	--accent-tertiary: var(--sea-glass) !important;
+	--accent-quaternary: var(--coral-blush) !important;
+	--accent-quinary: var(--sunset-gold) !important;
+	--accent-senary: var(--pearl-pink) !important;
+	--glow-primary: var(--opal-glow) !important;
+	--glow-secondary: var(--seashell-pink) !important;
 }
-.theme-dark .mermaid .node text {
-	fill: var(--mermaid-node-text) !important;
+
+/* --------------------------
+        CORAL GARDEN
+   -------------------------- */
+.theme-coral {
+	--bg-primary: linear-gradient(135deg, var(--seashell) 0%, var(--seashell-pink) 30%, var(--sand-dune) 100%) !important;
+	--bg-secondary: linear-gradient(135deg, var(--coral-blush) 0%, var(--pearl-pink) 50%, var(--seafoam-mist) 100%) !important;
+	--bg-tertiary: linear-gradient(135deg, var(--coral-gold) 0%, var(--deep-coral) 100%) !important;
+	--text-primary: var(--deep-ocean) !important;
+	--text-secondary: var(--teal-enchantment) !important;
+	--text-tertiary: var(--amethyst-deep) !important;
+	--border-color: var(--deep-coral) !important;
+	--accent-primary: var(--deep-coral) !important;
+	--accent-secondary: var(--turquoise-dream) !important;
+	--accent-tertiary: var(--coral-gold) !important;
+	--accent-quaternary: var(--lavender-tide) !important;
+	--accent-quinary: var(--sunset-gold) !important;
+	--accent-senary: var(--pearl-pink) !important;
+	--glow-primary: var(--coral-gold) !important;
+	--glow-secondary: var(--deep-coral) !important;
 }
-.theme-dark .mermaid .edgePath path {
-	stroke: var(--mermaid-edge-color) !important;
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes waterRipple {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
 }
-.theme-dark .mermaid .cluster rect {
-	fill: var(--mermaid-cluster-bg) !important;
-	stroke: var(--mermaid-node-border) !important;
+
+@keyframes shimmer {
+	0% {
+		background-position: -1000px 0;
+	}
+
+	100% {
+		background-position: 1000px 0;
+	}
 }
+
+/* ========== GENERAL OBSIDIAN NOTE STYLING ========== */
+
+.markdown-reading-view, .markdown-source-view {
+	font-family: var(--font-family-base) !important;
+	color: var(--text-primary) !important;
+	line-height: var(--line-height-relaxed) !important;
+	background: var(--bg-primary) !important;
+	background-size: 400% 400% !important;
+	animation: waterRipple 20s ease infinite !important;
+}
+
+/* Headings with pearlescent effects */
+.markdown-reading-view h1,
+.markdown-reading-view h2,
+.markdown-reading-view h3,
+.markdown-reading-view h4,
+.markdown-reading-view h5,
+.markdown-reading-view h6 {
+	font-family: var(--font-family-fantasy) !important;
+	font-weight: var(--font-weight-semibold) !important;
+	color: var(--text-primary) !important;
+	margin-top: var(--space-xl) !important;
+	margin-bottom: var(--space-md) !important;
+	padding-bottom: var(--space-sm) !important;
+	position: relative !important;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+.markdown-reading-view h1 {
+	font-size: var(--font-size-3xl) !important;
+	color: var(--accent-primary) !important;
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	background-clip: text !important;
+	border-bottom: 3px solid transparent !important;
+	border-image: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)) 1 !important;
+}
+.markdown-reading-view h2 {
+	font-size: var(--font-size-2xl) !important;
+	color: var(--accent-secondary) !important;
+	background: linear-gradient(90deg, var(--accent-secondary), var(--accent-tertiary)) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	background-clip: text !important;
+	border-bottom: 2px solid transparent !important;
+	border-image: linear-gradient(90deg, var(--accent-secondary), var(--accent-tertiary)) 1 !important;
+}
+.markdown-reading-view h3 {
+	font-size: var(--font-size-xl) !important;
+	color: var(--accent-tertiary) !important;
+	background: linear-gradient(90deg, var(--accent-tertiary), var(--accent-quaternary)) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	background-clip: text !important;
+	border-bottom: 2px solid transparent !important;
+	border-image: linear-gradient(90deg, var(--accent-tertiary), var(--accent-quaternary)) 1 !important;
+}
+.markdown-reading-view h4 {
+	font-size: var(--font-size-lg) !important;
+	color: var(--accent-quaternary) !important;
+	background: linear-gradient(90deg, var(--accent-quaternary), var(--accent-quinary)) !important;
+	-webkit-background-clip: text !important;
+	background-clip: text !important;
+	border-bottom: 1px dashed var(--accent-quaternary) !important;
+}
+.markdown-reading-view h5 {
+	font-size: var(--font-size-base) !important;
+	color: var(--accent-quinary) !important;
+	text-decoration: underline !important;
+	text-decoration-color: var(--accent-quinary) !important;
+	text-underline-offset: 0.25em !important;
+	text-shadow: 0 1px 2px rgba(255, 209, 102, 0.2) !important;
+}
+.markdown-reading-view h6 {
+	font-size: var(--font-size-sm) !important;
+	color: var(--accent-senary) !important;
+	font-style: italic !important;
+	opacity: 0.9 !important;
+}
+
+/* Lists with pearlescent bullets */
+.markdown-reading-view ul,
+.markdown-reading-view ol {
+	color: var(--text-primary) !important;
+	margin: var(--space-md) 0 !important;
+	padding-left: var(--space-xl) !important;
+}
+.markdown-reading-view li {
+	margin: var(--space-xs) 0 !important;
+	color: var(--text-primary) !important;
+	position: relative !important;
+}
+.markdown-reading-view li::marker {
+	color: var(--accent-primary) !important;
+}
+.markdown-reading-view ul li::before {
+	content: "✦" !important;
+	color: var(--accent-primary) !important;
+	position: absolute !important;
+	left: -1.5em !important;
+	font-size: 0.8em !important;
+	opacity: 0.7 !important;
+}
+
+/* Horizontal Rule - Ocean Wave */
+.markdown-reading-view hr {
+	border: none !important;
+	height: 4px !important;
+	background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 25%, var(--accent-tertiary) 50%, var(--accent-quaternary) 75%, var(--accent-primary) 100%) !important;
+	margin: var(--space-xl) 0 !important;
+	border-radius: var(--radius-base) !important;
+	position: relative !important;
+	overflow: hidden !important;
+}
+.markdown-reading-view hr::after {
+	content: "" !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: -100% !important;
+	width: 100% !important;
+	height: 100% !important;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent) !important;
+	animation: shimmer 3s infinite !important;
+}
+
+/* Bold and Italic */
+.markdown-reading-view strong {
+	color: var(--text-primary) !important;
+	font-weight: var(--font-weight-bold) !important;
+	text-shadow: 0 1px 2px rgba(26, 199, 194, 0.2) !important;
+}
+.markdown-reading-view em {
+	color: var(--text-primary) !important;
+	font-style: italic !important;
+	background: linear-gradient(90deg, transparent, rgba(155, 93, 229, 0.1), transparent) !important;
+	padding: 0 2px !important;
+}
+
+/* Code blocks and inline code - Sea Glass Style */
+.markdown-reading-view code {
+	font-family: var(--font-family-mono) !important;
+	background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+	color: var(--text-primary) !important;
+	padding: var(--space-xs) var(--space-sm) !important;
+	border-radius: var(--radius-sm) !important;
+	border: 1px solid var(--border-color) !important;
+	box-shadow: var(--shadow-sm) !important;
+	position: relative !important;
+	overflow: hidden !important;
+}
+.markdown-reading-view code::before {
+	content: "" !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: -100% !important;
+	width: 100% !important;
+	height: 100% !important;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+	animation: shimmer 2s infinite !important;
+}
+.markdown-reading-view pre code {
+	background: var(--bg-tertiary) !important;
+	color: var(--text-primary) !important;
+	padding: var(--space-md) !important;
+	border-radius: var(--radius-md) !important;
+	border: 1px solid var(--border-color) !important;
+	box-shadow: var(--shadow-glow) !important;
+}
+
+/* Links - Shimmering Water Effect */
+.markdown-reading-view a {
+	color: var(--accent-primary) !important;
+	text-decoration: none !important;
+	border-bottom: 1px solid transparent !important;
+	transition: all var(--transition-fast) !important;
+	position: relative !important;
+}
+.markdown-reading-view a::after {
+	content: "" !important;
+	position: absolute !important;
+	bottom: -2px !important;
+	left: 0 !important;
+	width: 100% !important;
+	height: 2px !important;
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)) !important;
+	transform: scaleX(0) !important;
+	transform-origin: left !important;
+	transition: transform var(--transition-base) !important;
+}
+.markdown-reading-view a:hover {
+	color: var(--accent-secondary) !important;
+}
+.markdown-reading-view a:hover::after {
+	transform: scaleX(1) !important;
+}
+
+/* Blockquotes - Pearlescent Note Cards */
+.markdown-reading-view blockquote {
+	background: var(--bg-secondary) !important;
+	border-left: 4px solid transparent !important;
+	border-image: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary)) 1 !important;
+	border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
+	padding: var(--space-md) !important;
+	margin: var(--space-md) 0 !important;
+	color: var(--text-secondary) !important;
+	box-shadow: var(--shadow-md) !important;
+	position: relative !important;
+	overflow: hidden !important;
+}
+.markdown-reading-view blockquote::before {
+	content: "❝" !important;
+	position: absolute !important;
+	top: 10px !important;
+	left: 10px !important;
+	font-size: 2em !important;
+	color: var(--accent-primary) !important;
+	opacity: 0.3 !important;
+}
+
+/* Tables - Oceanic Grid */
+.markdown-reading-view table {
+	width: 100% !important;
+	border-collapse: collapse !important;
+	margin: var(--space-lg) 0 !important;
+	border-radius: var(--radius-md) !important;
+	overflow: hidden !important;
+	box-shadow: var(--shadow-md) !important;
+	font-family: var(--font-family-base) !important;
+	background: var(--bg-secondary) !important;
+}
+.markdown-reading-view th {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+	color: var(--pearl-white) !important;
+	padding: var(--space-sm) var(--space-md) !important;
+	text-align: left !important;
+	font-weight: var(--font-weight-semibold) !important;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+.markdown-reading-view td {
+	padding: var(--space-sm) var(--space-md) !important;
+	border-bottom: 1px solid var(--border-color) !important;
+	background: var(--bg-primary) !important;
+	color: var(--text-primary) !important;
+	transition: all var(--transition-fast) !important;
+}
+.markdown-reading-view tr:hover td {
+	background: var(--bg-tertiary) !important;
+	transform: translateX(2px) !important;
+}
+
+/* Paragraphs */
+.markdown-reading-view p {
+	margin: var(--space-md) 0 !important;
+	color: var(--text-primary) !important;
+	line-height: var(--line-height-relaxed) !important;
+}
+
+/* Selection - Iridescent Glow */
+.markdown-reading-view ::selection {
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)) !important;
+	color: var(--pearl-white) !important;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ========== OBSIDIAN UI COMPONENTS ========== */
+
+/* Workspace background with water animation */
+.workspace,
+.workspace-split,
+.workspace-leaf {
+	background: var(--bg-primary) !important;
+	color: var(--text-primary) !important;
+	background-size: 400% 400% !important;
+	animation: waterRipple 30s ease infinite !important;
+}
+
+/* Sidebar styling - Ocean Depths */
+.sidebar,
+.nav-folder,
+.nav-file {
+	background: linear-gradient(135deg, var(--midnight-sea), var(--deep-ocean)) !important;
+	color: var(--pearl-white) !important;
+}
+.nav-folder-title,
+.nav-file-title {
+	color: var(--pearl-white) !important;
+	font-family: var(--font-family-base) !important;
+	padding: var(--space-xs) var(--space-sm) !important;
+	border-radius: var(--radius-sm) !important;
+	transition: all var(--transition-fast) !important;
+}
+.nav-folder-title:hover,
+.nav-file-title:hover {
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary)) !important;
+	transform: translateX(5px) !important;
+}
+
+/* Active file in sidebar - Pearlescent Glow */
+.nav-file.is-active .nav-file-title {
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)) !important;
+	color: var(--pearl-white) !important;
+	font-weight: var(--font-weight-medium) !important;
+	box-shadow: var(--shadow-glow) !important;
+	position: relative !important;
+	overflow: hidden !important;
+}
+.nav-file.is-active .nav-file-title::after {
+	content: "" !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: -100% !important;
+	width: 100% !important;
+	height: 100% !important;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+	animation: shimmer 2s infinite !important;
+}
+
+/* Tabs - Ocean Waves */
+.workspace-tabs .workspace-tab-header {
+	background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+	color: var(--text-secondary) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--radius-base) var(--radius-base) 0 0 !important;
+	padding: var(--space-sm) var(--space-md) !important;
+	font-family: var(--font-family-base) !important;
+	transition: all var(--transition-fast) !important;
+	position: relative !important;
+}
+.workspace-tabs .workspace-tab-header.is-active {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary)) !important;
+	color: var(--pearl-white) !important;
+	border-bottom-color: transparent !important;
+	font-weight: var(--font-weight-medium) !important;
+	box-shadow: var(--shadow-glow) !important;
+}
+
+/* ========== TOP TAB ICONS FIX ========== */
+
+/* Main workspace tabs container */
+.workspace-ribbon.mod-left {
+	background: linear-gradient(135deg, var(--midnight-sea), var(--deep-ocean)) !important;
+	padding: var(--space-xs) !important;
+	border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Individual tab buttons */
+.workspace-ribbon-tab-header {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 6px !important;
+	background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+	color: var(--text-secondary) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--radius-base) !important;
+	padding: var(--space-sm) var(--space-md) !important;
+	min-height: 32px !important;
+	transition: all var(--transition-fast) !important;
+	font-size: var(--font-size-sm) !important;
+	font-family: var(--font-family-base) !important;
+}
+
+/* Tab icon */
+.workspace-ribbon-tab-header .clickable-icon {
+	width: 16px !important;
+	height: 16px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	background: none !important;
+	color: inherit !important;
+	opacity: 1 !important;
+}
+
+.workspace-ribbon-tab-header .clickable-icon svg {
+	width: 16px !important;
+	height: 16px !important;
+	display: block !important;
+	fill: currentColor !important;
+	stroke: currentColor !important;
+	opacity: 1 !important;
+	color: inherit !important;
+}
+
+/* Tab text */
+.workspace-ribbon-tab-header-inner {
+	display: flex !important;
+	align-items: center !important;
+	gap: 6px !important;
+	color: inherit !important;
+}
+
+.workspace-ribbon-tab-header-inner-text {
+	display: inline !important;
+	color: inherit !important;
+	font-size: var(--font-size-sm) !important;
+}
+
+/* Hover state */
+.workspace-ribbon-tab-header:hover {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary)) !important;
+	color: var(--pearl-white) !important;
+	transform: translateY(-2px) !important;
+	box-shadow: var(--shadow-md) !important;
+	border-color: var(--accent-primary) !important;
+}
+
+/* Active state */
+.workspace-ribbon-tab-header.is-active {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+	color: var(--pearl-white) !important;
+	border-color: var(--accent-primary) !important;
+	font-weight: var(--font-weight-medium) !important;
+	box-shadow: var(--shadow-glow) !important;
+}
+
+/* Remove any conflicting opacity or filters */
+.workspace-ribbon-tab-header *,
+.workspace-ribbon-tab-header svg {
+	opacity: 1 !important;
+	filter: none !important;
+}
+
+/* Ensure icons inherit color properly */
+.workspace-ribbon-tab-header.is-active .clickable-icon,
+.workspace-ribbon-tab-header.is-active svg {
+	color: var(--pearl-white) !important;
+}
+
+.workspace-ribbon-tab-header:hover .clickable-icon,
+.workspace-ribbon-tab-header:hover svg {
+	color: var(--pearl-white) !important;
+}
+
+/* ========== FORCE ICON VISIBILITY ========== */
+
+.workspace-ribbon-tab-header .clickable-icon,
+.workspace-ribbon-tab-header .clickable-icon svg,
+.workspace-ribbon-tab-header svg,
+.workspace-ribbon-tab-header path {
+	display: block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	width: 16px !important;
+	height: 16px !important;
+}
+
+.workspace-ribbon-tab-header svg path {
+	fill: currentColor !important;
+	stroke: currentColor !important;
+}
+
+/* ========== WORKSPACE TAB HEADERS COMPLETE FIX ========== */
+
+/* Top workspace tabs container */
+.workspace-tabs {
+	background: linear-gradient(135deg, var(--midnight-sea), var(--deep-ocean)) !important;
+	padding: var(--space-xs) var(--space-sm) !important;
+	border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Individual workspace tab */
+.workspace-tab-header-container {
+	display: flex !important;
+	align-items: center !important;
+	gap: 4px !important;
+}
+
+.workspace-tab-header {
+	display: flex !important;
+	align-items: center !important;
+	gap: 6px !important;
+	background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+	color: var(--text-secondary) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--radius-base) var(--radius-base) 0 0 !important;
+	padding: var(--space-xs) var(--space-md) !important;
+	min-height: 32px !important;
+	max-width: 200px !important;
+	transition: all var(--transition-fast) !important;
+	font-size: var(--font-size-sm) !important;
+	font-family: var(--font-family-base) !important;
+	position: relative !important;
+	cursor: pointer !important;
+}
+
+/* Tab inner container */
+.workspace-tab-header-inner {
+	display: flex !important;
+	align-items: center !important;
+	gap: 6px !important;
+	flex: 1 !important;
+	min-width: 0 !important;
+	color: inherit !important;
+}
+
+/* Tab icon */
+.workspace-tab-header-inner-icon {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 16px !important;
+	height: 16px !important;
+	flex-shrink: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	color: inherit !important;
+	opacity: 1 !important;
+}
+
+.workspace-tab-header-inner-icon svg {
+	width: 16px !important;
+	height: 16px !important;
+	display: block !important;
+	fill: currentColor !important;
+	stroke: currentColor !important;
+	color: inherit !important;
+	opacity: 0.8 !important;
+}
+
+/* Tab close button */
+.workspace-tab-header-close-button {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 16px !important;
+	height: 16px !important;
+	margin-left: 6px !important;
+	padding: 0 !important;
+	color: currentColor !important;
+	background: none !important;
+	border: none !important;
+	border-radius: var(--radius-sm) !important;
+	cursor: pointer !important;
+	transition: all var(--transition-fast) !important;
+	opacity: 0.6 !important;
+	flex-shrink: 0 !important;
+}
+
+.workspace-tab-header-close-button:hover {
+	background: rgba(255, 255, 255, 0.15) !important;
+	opacity: 1 !important;
+	transform: scale(1.15) !important;
+}
+
+.workspace-tab-header-close-button svg {
+	width: 12px !important;
+	height: 12px !important;
+	color: inherit !important;
+}
+
+/* Hover state for tab */
+.workspace-tab-header:hover {
+	background: linear-gradient(135deg, var(--marine-blue), var(--aqua-tide)) !important;
+	color: var(--pearl-white) !important;
+	transform: translateY(-2px) !important;
+	box-shadow: var(--shadow-md) !important;
+	border-bottom-color: transparent !important;
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner-icon svg {
+	opacity: 1 !important;
+}
+
+/* Active tab state */
+.workspace-tab-header.is-active {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+	color: var(--pearl-white) !important;
+	border-color: var(--accent-primary) !important;
+	border-bottom-color: transparent !important;
+	font-weight: var(--font-weight-medium) !important;
+	box-shadow: var(--shadow-glow) !important;
+	z-index: 10 !important;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon svg {
+	opacity: 1 !important;
+	filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3)) !important;
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-close-button {
+	color: var(--pearl-white) !important;
+	opacity: 0.8 !important;
+}
+
+/* New tab button (+) */
+.workspace-tab-header-new-tab {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 32px !important;
+	height: 32px !important;
+	background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+	color: var(--text-secondary) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--radius-base) !important;
+	margin-left: 4px !important;
+	cursor: pointer !important;
+	transition: all var(--transition-fast) !important;
+}
+
+.workspace-tab-header-new-tab:hover {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary)) !important;
+	color: var(--pearl-white) !important;
+	transform: scale(1.1) rotate(90deg) !important;
+	box-shadow: var(--shadow-md) !important;
+}
+
+/* Tab spacer/separator */
+.workspace-tab-header-spacer {
+	flex: 1 !important;
+}
+
+/* Ensure visibility */
+.workspace-tab-header *,
+.workspace-tab-header svg,
+.workspace-tab-header path {
+	visibility: visible !important;
+}
+
+/* Fix for any opacity issues */
+.workspace-tab-header-inner *:not(.workspace-tab-header-close-button) {
+	opacity: 1 !important;
+}
+
+/* Remove conflicting transforms */
+.workspace-tab-header-inner-icon {
+	transform: none !important;
+}
+
+/* Status bar - Sandy Shore */
+.status-bar {
+	background: linear-gradient(90deg, var(--sand-dune), var(--seashell)) !important;
+	color: var(--deep-ocean) !important;
+	border-top: 1px solid var(--border-color) !important;
+	font-family: var(--font-family-base) !important;
+	font-size: var(--font-size-sm) !important;
+}
+
+/* Search and input fields - Seaglass Inputs */
+.search-input,
+.prompt-input,
+input[type="text"],
+input[type="search"],
+textarea {
+	background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+	color: var(--text-primary) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--radius-base) !important;
+	padding: var(--space-sm) var(--space-md) !important;
+	font-family: var(--font-family-base) !important;
+	font-size: var(--font-size-base) !important;
+	box-shadow: var(--shadow-sm) !important;
+	transition: all var(--transition-fast) !important;
+}
+.search-input:focus,
+.prompt-input:focus,
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	outline: 2px solid var(--accent-primary) !important;
+	outline-offset: 2px !important;
+	border-color: transparent !important;
+	box-shadow: var(--shadow-glow) !important;
+	transform: translateY(-2px) !important;
+}
+
+/* Regular buttons - Shimmering Pearls */
+button:not(.workspace-tab-header button):not(.clickable-icon):not(.workspace-tab-header-close-button):not(.workspace-tab-header-inner):not(.workspace-tab-header-inner-icon),
+.modal button:not(.workspace-tab-header button),
+.suggestion-item {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+	color: var(--pearl-white) !important;
+	border: none !important;
+	border-radius: var(--radius-base) !important;
+	padding: var(--space-xs) var(--space-sm) !important;
+	font-family: var(--font-family-base) !important;
+	font-size: var(--font-size-sm) !important;
+	cursor: pointer !important;
+	transition: all var(--transition-fast) !important;
+	box-shadow: var(--shadow-md) !important;
+	position: relative !important;
+	overflow: hidden !important;
+}
+button:not(.workspace-tab-header button):not(.clickable-icon):not(.workspace-tab-header-close-button):not(.workspace-tab-header-inner):not(.workspace-tab-header-inner-icon)::after,
+.modal button:not(.workspace-tab-header button)::after,
+.suggestion-item::after {
+	content: "" !important;
+	position: absolute !important;
+	top: -50% !important;
+	left: -50% !important;
+	width: 200% !important;
+	height: 200% !important;
+	background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent) !important;
+	transform: rotate(45deg) !important;
+	transition: transform 0.5s !important;
+}
+button:not(.workspace-tab-header button):not(.clickable-icon):not(.workspace-tab-header-close-button):not(.workspace-tab-header-inner):not(.workspace-tab-header-inner-icon):hover,
+.modal button:not(.workspace-tab-header button):hover,
+.suggestion-item:hover {
+	transform: translateY(-2px) !important;
+	box-shadow: var(--shadow-lg) !important;
+}
+button:not(.workspace-tab-header button):not(.clickable-icon):not(.workspace-tab-header-close-button):not(.workspace-tab-header-inner):not(.workspace-tab-header-inner-icon):hover::after,
+.modal button:not(.workspace-tab-header button):hover::after,
+.suggestion-item:hover::after {
+	transform: rotate(45deg) translate(100px) !important;
+}
+
+/* Modals and popups - Pearlescent Shells */
+.modal,
+.prompt {
+	background: linear-gradient(135deg, var(--pearl-white), var(--seashell)) !important;
+	color: var(--deep-ocean) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--radius-lg) !important;
+	box-shadow: var(--shadow-lg) !important;
+	font-family: var(--font-family-base) !important;
+	overflow: hidden !important;
+}
+.modal::before {
+	content: "" !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	height: 4px !important;
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary), var(--accent-quaternary)) !important;
+}
+.modal-title {
+	color: var(--accent-primary) !important;
+	font-family: var(--font-family-fantasy) !important;
+	font-weight: var(--font-weight-semibold) !important;
+	font-size: var(--font-size-lg) !important;
+	border-bottom: 2px solid var(--border-color) !important;
+	padding-bottom: var(--space-sm) !important;
+}
+
+/* Settings page - Coral Reef */
+.vertical-tab-header {
+	background: linear-gradient(135deg, var(--midnight-sea), var(--marine-blue)) !important;
+	border-right: 2px solid var(--border-color) !important;
+}
+.vertical-tab-nav-item {
+	color: var(--pearl-white) !important;
+	padding: var(--space-sm) var(--space-md) !important;
+	border-radius: var(--radius-sm) !important;
+	font-family: var(--font-family-base) !important;
+	transition: all var(--transition-fast) !important;
+}
+.vertical-tab-nav-item.is-active {
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary)) !important;
+	color: var(--pearl-white) !important;
+	font-weight: var(--font-weight-medium) !important;
+	transform: translateX(5px) !important;
+}
+
+/* ========== SWITCH BUTTON FIX ========== */
+
+/* Slider switches (Obsidian's toggle buttons) - FIXED */
+.setting-item-control .slider {
+	all: unset !important;
+	width: 40px !important;
+	height: 20px !important;
+	background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: 20px !important;
+	position: relative !important;
+	cursor: pointer !important;
+	transition: all var(--transition-fast) !important;
+	box-shadow: var(--shadow-sm) !important;
+	flex-shrink: 0 !important;
+}
+
+.setting-item-control .slider::before {
+	content: "" !important;
+	position: absolute !important;
+	width: 16px !important;
+	height: 16px !important;
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+	border-radius: 50% !important;
+	top: 1px !important;
+	left: 1px !important;
+	transition: all var(--transition-fast) !important;
+	box-shadow: var(--shadow-sm) !important;
+}
+
+.setting-item-control input[type="checkbox"]:checked + .slider {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary)) !important;
+	border-color: var(--accent-primary) !important;
+	box-shadow: var(--shadow-glow) !important;
+}
+
+.setting-item-control input[type="checkbox"]:checked + .slider::before {
+	transform: translateX(20px) !important;
+	background: linear-gradient(135deg, var(--pearl-white), var(--seafoam-mist)) !important;
+	box-shadow: var(--shadow-base) !important;
+}
+
+/* Hover effect for slider */
+.setting-item-control .slider:hover {
+	transform: scale(1.05) !important;
+	box-shadow: var(--shadow-md) !important;
+}
+
+/* Regular checkboxes - keep them simple */
+.setting-item-control input[type="checkbox"]:not(.slider) {
+	accent-color: var(--accent-primary) !important;
+	width: 1.2em !important;
+	height: 1.2em !important;
+	border-radius: var(--radius-sm) !important;
+	position: relative !important;
+	cursor: pointer !important;
+}
+
+/* Scrollbars - Ocean Currents */
+::-webkit-scrollbar {
+	width: 12px !important;
+	height: 12px !important;
+}
+::-webkit-scrollbar-track {
+	background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+	border-radius: var(--radius-sm) !important;
+}
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary)) !important;
+	border-radius: var(--radius-sm) !important;
+	border: 2px solid var(--bg-primary) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(135deg, var(--accent-secondary), var(--accent-quaternary)) !important;
+	box-shadow: var(--shadow-glow) !important;
+}
+
+/* Tooltips - Seafoam Bubbles */
+.tooltip {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary)) !important;
+	color: var(--pearl-white) !important;
+	border: none !important;
+	border-radius: var(--radius-base) !important;
+	padding: var(--space-xs) var(--space-sm) !important;
+	font-family: var(--font-family-base) !important;
+	font-size: var(--font-size-sm) !important;
+	box-shadow: var(--shadow-md) !important;
+}
+
+/* ========== EDIT MODE STYLING ========== */
+
+.cm-s-obsidian {
+	font-family: var(--font-family-base) !important;
+	color: var(--text-primary) !important;
+	background: var(--bg-primary) !important;
+	background-size: 400% 400% !important;
+	animation: waterRipple 25s ease infinite !important;
+}
+
+/* CodeMirror headings with gradient text */
+.cm-header-1 {
+	color: var(--accent-primary) !important;
+	font-size: var(--font-size-3xl) !important;
+	font-weight: var(--font-weight-semibold) !important;
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	background-clip: text !important;
+}
+.cm-header-2 {
+	color: var(--accent-secondary) !important;
+	font-size: var(--font-size-2xl) !important;
+	font-weight: var(--font-weight-semibold) !important;
+	background: linear-gradient(90deg, var(--accent-secondary), var(--accent-tertiary)) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	background-clip: text !important;
+}
+.cm-header-3 {
+	color: var(--accent-tertiary) !important;
+	font-size: var(--font-size-xl) !important;
+	font-weight: var(--font-weight-semibold) !important;
+	background: linear-gradient(90deg, var(--accent-tertiary), var(--accent-quaternary)) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	background-clip: text !important;
+}
+.cm-header-4 {
+	color: var(--accent-quaternary) !important;
+	font-size: var(--font-size-lg) !important;
+	font-weight: var(--font-weight-semibold) !important;
+}
+.cm-header-5 {
+	color: var(--accent-quinary) !important;
+	font-size: var(--font-size-base) !important;
+	font-weight: var(--font-weight-semibold) !important;
+	text-shadow: 0 1px 2px rgba(255, 209, 102, 0.2) !important;
+}
+.cm-header-6 {
+	color: var(--accent-senary) !important;
+	font-size: var(--font-size-sm) !important;
+	font-weight: var(--font-weight-semibold) !important;
+	opacity: 0.9 !important;
+}
+
+/* Bold and italic in edit mode */
+.cm-strong {
+	color: var(--text-primary) !important;
+	font-weight: var(--font-weight-bold) !important;
+	text-shadow: 0 1px 2px rgba(26, 199, 194, 0.2) !important;
+}
+
+.cm-em {
+	color: var(--text-primary) !important;
+	font-style: italic !important;
+	background: linear-gradient(90deg, transparent, rgba(155, 93, 229, 0.1), transparent) !important;
+}
+
+/* Links in edit mode */
+.cm-link {
+	color: var(--accent-primary) !important;
+	text-decoration: none !important;
+	position: relative !important;
+}
+.cm-link:hover::after {
+	content: "" !important;
+	position: absolute !important;
+	bottom: -1px !important;
+	left: 0 !important;
+	width: 100% !important;
+	height: 1px !important;
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)) !important;
+}
+
+/* Code in edit mode */
+.cm-inline-code {
+	font-family: var(--font-family-mono) !important;
+	background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+	color: var(--text-primary) !important;
+	padding: 2px 6px !important;
+	border-radius: var(--radius-sm) !important;
+	border: 1px solid var(--border-color) !important;
+	box-shadow: var(--shadow-sm) !important;
+}
+
+/* Cursor and selection in edit mode */
+.CodeMirror-cursor {
+	border-color: var(--accent-primary) !important;
+	border-width: 2px !important;
+}
+.CodeMirror-selected {
+	background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)) !important;
+	opacity: 0.3 !important;
+}
+
+/* ========== PANES AND SPLITS ========== */
+
+/* Workspace leaf (each pane) */
+.workspace-leaf {
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--radius-md) !important;
+	margin: var(--space-sm) !important;
+	background: var(--bg-primary) !important;
+}
+
+/* Split view handle */
+.workspace-split.mod-root > .workspace-leaf:last-child > .workspace-leaf-resize-handle {
+	background-color: var(--border-color) !important;
+}
+
+/* ========== ICONS AND DECORATIONS ========== */
+
+/* File icons */
+.nav-file-title-content::before,
+.nav-folder-title-content::before {
+	 width: 18px !important;
+    height: 18px !important;
+    margin-right: 6px !important;
+    display: inline-block !important;
+}
+.nav-file-title,
+.nav-folder-title {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    min-height: 26px !important;
+    line-height: 20px !important;
+}
+.theme-dark .nav-file-title-content::before,
+.theme-dark .nav-folder-title-content::before {
+	filter: invert(0.8) !important;
+}
+
+/* Collapse/expand icons */
+.nav-folder-collapse-indicator {
+	color: var(--text-tertiary) !important;
+}
+
+/* ========== PLUGIN SUPPORT ========== */
+
+/* Dataview Plugin */
+.table-view-table {
+	font-family: var(--font-family-base) !important;
+}
+.table-view-table > thead > tr > th {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+	color: var(--pearl-white) !important;
+	border-bottom: 2px solid var(--border-color) !important;
+}
+
+/* Calendar Plugin */
+.obsidian-calendar {
+	font-family: var(--font-family-base) !important;
+}
+.obsidian-calendar .today {
+	background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary)) !important;
+	color: var(--pearl-white) !important;
+	border-radius: var(--radius-base) !important;
+}
+
+/* Kanban Plugin */
+.kanban-plugin {
+	font-family: var(--font-family-base) !important;
+}
+
+.kanban-plugin__item {
+	background: var(--bg-primary) !important;
+	border: 1px solid var(--border-color) !important;
+	border-radius: var(--radius-base) !important;
+	box-shadow: var(--shadow-sm) !important;
+}
+
+/* ========== ADVANCED FEATURES ========== */
+
+/* Focus Mode */
+.focus-mode .markdown-reading-view:not(.focus-mode-active) {
+	opacity: 0.3 !important;
+	transition: opacity var(--transition-base) !important;
+}
+.focus-mode .markdown-reading-view.focus-mode-active {
+	opacity: 1 !important;
+	transform: scale(1.02) !important;
+	transition: all var(--transition-base) !important;
+}
+
+/* Print Styles */
+@media print {
+	.markdown-reading-view {
+		break-inside: avoid !important;
+		background: white !important;
+		animation: none !important;
+	}
+	.markdown-reading-view h1,
+	.markdown-reading-view h2,
+	.markdown-reading-view h3,
+	.markdown-reading-view h4,
+	.markdown-reading-view h5,
+	.markdown-reading-view h6 {
+		color: var(--deep-ocean) !important;
+		-webkit-text-fill-color: var(--deep-ocean) !important;
+		background: none !important;
+	}
+	.markdown-reading-view code {
+		background: white !important;
+		color: black !important;
+		border: 1px solid #ccc !important;
+	}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.markdown-reading-view {
+		font-size: var(--font-size-sm) !important;
+		padding: var(--space-sm) !important;
+	}
+	.markdown-reading-view h1 {
+		font-size: var(--font-size-2xl) !important;
+	}
+	.markdown-reading-view h2 {
+		font-size: var(--font-size-xl) !important;
+	}
+	.markdown-reading-view h3 {
+		font-size: var(--font-size-lg) !important;
+	}
+	.markdown-reading-view h4 {
+		font-size: var(--font-size-base) !important;
+	}
+	.markdown-reading-view h5 {
+		font-size: var(--font-size-sm) !important;
+	}
+	.markdown-reading-view h6 {
+		font-size: var(--font-size-xs) !important;
+	}
+	.sidebar {
+		width: 100% !important;
+		background: linear-gradient(135deg, var(--midnight-sea), var(--iris-purple)) !important;
+	}
+	.workspace-tabs .workspace-tab-header {
+		padding: var(--space-xs) var(--space-sm) !important;
+		font-size: var(--font-size-sm) !important;
+	}
+	button,
+	.modal button {
+		padding: var(--space-sm) !important;
+		margin: var(--space-xs) !important;
+	}
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+		animation: none !important;
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.markdown-reading-view {
+		--border-color: currentColor !important;
+	}
+	.markdown-reading-view h1,
+	.markdown-reading-view h2,
+	.markdown-reading-view h3,
+	.markdown-reading-view h4 {
+		border-bottom-width: 2px !important;
+	}
+}
+
+/* Dark mode auto-detection */
+@media (prefers-color-scheme: dark) {
+	.auto-theme {
+		--bg-primary: linear-gradient(135deg, var(--midnight-sea) 0%, var(--deep-ocean) 100%) !important;
+		--bg-secondary: linear-gradient(135deg, var(--iris-purple) 0%, var(--marine-blue) 30%, var(--midnight-sea) 100%) !important;
+		--text-primary: var(--pearl-white) !important;
+		--text-secondary: var(--seafoam-mist) !important;
+		--border-color: var(--aqua-tide) !important;
+	}
+}
+
+/* Focus states for accessibility */
+.markdown-reading-view :focus {
+	outline: 2px solid var(--accent-primary) !important;
+	outline-offset: 2px !important;
+	border-radius: var(--radius-sm) !important;
+}
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth !important;
+}
+
